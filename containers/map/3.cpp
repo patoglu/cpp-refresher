@@ -33,19 +33,21 @@ int main()
 {
     map<int, Person> people;
     
-   /* people[0] = Person("Mike", 40);
+    people[0] = Person("Mike", 40);
     people[1] = Person("Vicky", 30);
     people[30]  = Person("Raj", 20);
-    */
+    
    
-    /*
+    
     cout << "Now copy constructor will run." << endl;
     
     people.insert(make_pair(55,Person("Ali", 10)));
     people.insert(make_pair(56, Person("Veli", 11)));
     for(map<int, Person>::iterator it = people.begin() ; it != people.end(); it++)
     {
+        cout << "Value: ";
         cout << it->first;
+        cout << "Key: ";
         it->second.print();
-    }*/
+    }
 }
