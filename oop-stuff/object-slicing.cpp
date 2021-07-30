@@ -1,6 +1,5 @@
 #include <iostream>
-
-
+#include <vector>
 using namespace std;
 
 class Parent
@@ -36,6 +35,16 @@ public:
 private:
     int two;
 };
+
+void byValue(const Parent parent)
+{
+    parent.print();
+}
+
+void byReference(const Parent& parent)
+{
+    parent.print();
+}
 int main()
 {
     Child c1;
@@ -46,6 +55,39 @@ int main()
     Parent p2 = Child(); //upcasting.
     p2.print(); // Will print "hello from parent" and invoke parent's copy constructor.
 
+    Child funcTest;
+    
+    byValue(funcTest); //you get slicing with call by value.
+     
+    byReference(funcTest); //it's fine with call by reference.
+    
+    
+    vector<Parent> v;
+    v.push_back(Parent());
+    v.push_back(Child());
+    
+    for(const auto& element : v)
+    {
+        cout << "I am sliced: ";
+        element.print();
+    }
+    
+    vector<Parent*> v_p;
+    
+    //In this case we won't able to assign anonymous objects.
+    
+    Parent parent;
+    Child child;
+    
+    v_p.push_back(&parent);
+    v_p.push_back(&child);
+    
+    for(const auto* element: v_p)
+    {
+        cout << "I am not sliced: ";
+        element->print();
+    }
+    
     
     return 0;
 }
