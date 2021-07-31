@@ -1,6 +1,6 @@
 
 
-## Advices and important concepts. (Most of them are from [C++ Coding Standarts 101 Rules, Guidelines, and Best Practices - Herb Sutter, Andrei Alexandrescu](https://books.google.com.tr/books/about/C++_Coding_Standards.html?id=mmjVIC6WolgC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false)
+## Advices and important concepts. (Most of them are from [C++ Coding Standarts 101 Rules, Guidelines, and Best Practices - Herb Sutter, Andrei Alexandrescu](https://books.google.com.tr/books/about/C++_Coding_Standards.html?id=mmjVIC6WolgC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false))
 
 ### 1-) Avoid using macros.
 
