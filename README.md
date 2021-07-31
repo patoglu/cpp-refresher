@@ -54,4 +54,20 @@ int *y = &int(12); // illegal to take the address of a temporary.
 [Source](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in?page=1&tab=oldest#tab-top)
 
 
+ ### 2-) Class Types
  
+ 
+ - **Value Classes**:
+  Value classes implement the *big three*. Simply if you assign them to another variable, the content of the rhs object gets copied to lhs object. Vector is a good example:
+   ``` c++
+    vector<int> v1;
+    vector<int> v2;
+    v1.push_back(1);
+    v1.push_back(2);
+    v1.push_back(3);
+    v2 = v1; // Deep copy.
+    print(v2);
+    v1.pop_back();
+    print(v2);//Not shallow copy.
+```
+  
