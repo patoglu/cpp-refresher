@@ -22,8 +22,8 @@
 
 - You can't re-assign references whereas you can assign pointers.
 
-```
-/*Pointers*/ c++
+``` c++
+/*Pointers*/ 
 int a = 5, b = 10;
 int *p = &a 
 p = &b; //all fine.
