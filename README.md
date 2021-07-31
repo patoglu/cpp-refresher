@@ -69,5 +69,11 @@ int *y = &int(12); // illegal to take the address of a temporary.
     print(v2);
     v1.pop_back();
     print(v2);//Not shallow copy.
-```
-  
+    ```
+
+    - They usually instantiated in stack and used as member of another class. 
+    - They don't have any virtual functions.
+  - **Base Classes**:
+      - They generally create interfaces with interfaces.
+      - Usually created dynamically on the heap as parf of a derived class object.
+ 
