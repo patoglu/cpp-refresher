@@ -58,7 +58,7 @@ int *y = &int(12); // illegal to take the address of a temporary.
  
  
  - **Value Classes**:
-  Value classes implement the *big three*. Simply if you assign them to another variable, the content of the rhs object gets copied to lhs object. Vector is a good example:
+    - Value classes implement the *big three*. Simply if you assign them to another variable, the content of the rhs object gets copied to lhs object. Vector is a good example:
    ``` c++
     vector<int> v1;
     vector<int> v2;
@@ -74,6 +74,11 @@ int *y = &int(12); // illegal to take the address of a temporary.
     - They usually instantiated in stack and used as member of another class. 
     - They don't have any virtual functions.
   - **Base Classes**:
-      - They generally create interfaces with interfaces.
+      - They generally create interfaces with virtual functions.
       - Usually created dynamically on the heap as parf of a derived class object.
+  - **Traits classes**:
+      - It's not instantiated, generally contains ```typedef```s and static functions.
+      
+   - **Policy classes**:
+      - A policy class is a template parameter used to transmit behavior. An example from the standard library is std::allocator, which supplies memory management behaviors to standard containers. [Source](https://www.boost.org/community/generic_programming.html#policy)
  
