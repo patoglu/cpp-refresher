@@ -54,7 +54,7 @@ int *y = &int(12); // illegal to take the address of a temporary.
 [Source](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in?page=1&tab=oldest#tab-top)
 
 
- ### 2-) Class Types
+ ### 3-) Class Types
  
  
  - **Value Classes**:
