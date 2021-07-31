@@ -1,6 +1,6 @@
 
 
-## Ey Oğul
+## Advices and important concepts. (Most of them are from [C++ Coding Standarts 101 Rules, Guidelines, and Best Practices - Herb Sutter, Andrei Alexandrescu](https://books.google.com.tr/books/about/C++_Coding_Standards.html?id=mmjVIC6WolgC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false)
 
 ### 1-) Avoid using macros.
 
@@ -51,4 +51,7 @@ int **pp = &p;
 const int &x = int(12); // legal C++
 int *y = &int(12); // illegal to take the address of a temporary.
 ```
+[Source](https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in?page=1&tab=oldest#tab-top)
+
+
  
