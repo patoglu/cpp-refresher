@@ -82,3 +82,28 @@ int *y = &int(12); // illegal to take the address of a temporary.
    - **Policy classes**:
       - A policy class is a template parameter used to transmit behavior. An example from the standard library is std::allocator, which supplies memory management behaviors to standard containers. [Source](https://www.boost.org/community/generic_programming.html#policy)
  
+ ### 4-)Always initialize in the same order.
+ 
+ In constructor you should initialize the values in the same order that you define those values. 
+ ``` c++
+class Player
+{
+private:
+    string m_jersey, m_first_name, m_last_name;
+public:
+    Player(string first_name, string last_name):
+    m_first_name(first_name), m_last_name(last_name), m_jersey(first_name + " 9 " + last_name){};
+    void print()const
+    {
+        cout << m_jersey << endl;
+    }
+};
+int main()
+{
+    Player zlatan("Zlatan", "Ibrahimovic");
+    zlatan.print();
+}
+```
+
+Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and case undefined behaviour.
+
