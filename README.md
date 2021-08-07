@@ -105,5 +105,5 @@ int main()
 }
 ```
 
-Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and case undefined behaviour.
+Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and cause undefined behaviour.
 
