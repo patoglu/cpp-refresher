@@ -92,7 +92,7 @@ private:
     string m_jersey, m_first_name, m_last_name;
 public:
     Player(string first_name, string last_name):
-    m_first_name(first_name), m_last_name(last_name), m_jersey(first_name + " 9 " + last_name){};
+    m_first_name(first_name), m_last_name(last_name), m_jersey(m_first_name + " 9 " + m_last_name){};
     void print()const
     {
         cout << m_jersey << endl;
