@@ -5,8 +5,6 @@ using namespace std;
 
 class Player
 {
-    
-
 private:
     string m_jersey, m_first_name, m_last_name;
 public:
@@ -17,7 +15,6 @@ public:
         cout << m_jersey << endl;
     }
 };
-
 int main()
 {
     Player zlatan("Zlatan", "Ibrahimovic");
