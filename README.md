@@ -1,6 +1,6 @@
 
 
-## Advices and important concepts. (Most of them are from: [C++ Coding Standarts 101 Rules, Guidelines, and Best Practices - Herb Sutter, Andrei Alexandrescu](https://books.google.com.tr/books/about/C++_Coding_Standards.html?id=mmjVIC6WolgC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false))
+## Advices and important concepts. (Most of them are from: [C++ Coding Standards 101 Rules, Guidelines, and Best Practices - Herb Sutter, Andrei Alexandrescu](https://books.google.com.tr/books/about/C++_Coding_Standards.html?id=mmjVIC6WolgC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false))
 
 ### 1-) Avoid using macros.
 
@@ -92,7 +92,7 @@ private:
     string m_jersey, m_first_name, m_last_name;
 public:
     Player(string first_name, string last_name):
-    m_first_name(first_name), m_last_name(last_name), m_jersey(first_name + " 9 " + last_name){};
+    m_first_name(first_name), m_last_name(last_name), m_jersey(m_first_name + " 9 " + m_last_name){};
     void print()const
     {
         cout << m_jersey << endl;
@@ -105,5 +105,5 @@ int main()
 }
 ```
 
-Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and case undefined behaviour.
+Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and cause undefined behaviour.
 
