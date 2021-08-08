@@ -107,3 +107,23 @@ int main()
 
 Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and cause undefined behaviour.
 
+ ### 5-)Shallow vs Deep Copy.
+ 
+ A shallow copy, copies all of the member variables from one object to another except pointer objects and it's done by default assignment operator.
+  ``` c++
+  struct Test
+  {
+  char *ptr;
+  };
+  
+  void shallow_copy(Test &src, Test &dest)
+  {
+    dest.ptr = src.ptr;
+  }
+  void deep_copy(Test &src, Test &dest)
+  {
+    dest.ptr = (char *) malloc(strlen(src.ptr) + !);
+    strcpy(dest.ptr, src.ptr);
+  }
+  ```
+ 
