@@ -126,4 +126,22 @@ Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_
     strcpy(dest.ptr, src.ptr);
   }
   ```
+ ### 6-)Use member initialization instead of assignment in constructors.
  
+ A shallow copy, copies all of the member variables from one object to another except pointer objects and it's done by default assignment operator.
+  ``` c++
+  
+  class A 
+  {
+  private:
+      string s1_, s2_;
+  public:
+      A() { s1_ = “Hello, “; s2_ = “world”; } 
+  };
+  ```
+  
+  The code generated for the constructor is like this:   ```A():s1_(), s2_(){s1_ = "Hello"; s2_ = "world";} ``` 
+  
+  So for writing more clean and faster code initialize member variables like this: ```A():s1_("Hello"), s2_("World"){} ```
+ 
+
