@@ -162,6 +162,5 @@ else
   speedupFactor = -1;
 // Better: Initializes variable
 int speedupFactor = -1;
-if(condition)
-  speedupFactor = 2
+if(condition) speedupFactor = 2
 ```
