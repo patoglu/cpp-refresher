@@ -152,3 +152,16 @@ In C++, inheritance is the second-tightest coupling relationship after friendshi
  Magic numbers are not self-explanatory and it's hard to maintain them. So instead of using ```3.14``` in the code define a constant as ```const size_t PI = 3.14``` 
  
  Another example might be changeable ```page_size``` variable. ```const size_t page_size = 4096```. In this example if you'd used magic number instead of variable name, it would create headaches while changing it in the code. But if you use variable name you only change the value of your constant variable.
+ 
+  ### 8-)Don't forget to initalize variables.
+  Uninitialized variables are the most common bugs in C/C++ programs. Java does this initialisation implicitly, in C++ you should initialise the variables explicitly. Some programs might run because the uninitialised variable may have the desired value. After re-compilation, that variable may have another value that you don't want. In order to overcome this situation, always initialise the variables.
+  ``` C++
+int speedupFactor;
+if(condition) speedupFactor = 2;
+else
+  speedupFactor = -1;
+// Better: Initializes variable
+int speedupFactor = -1;
+if(condition)
+  speedupFactor = 2
+```
