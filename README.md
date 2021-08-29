@@ -107,3 +107,60 @@ int main()
 
 Since the variable ```m_jersey``` is defined before ```m_first_name``` and ```m_last_name```, it will be initialized first and cause undefined behaviour.
 
+ ### 5-)Shallow vs Deep Copy.
+ 
+ A shallow copy, copies all of the member variables from one object to another except pointer objects and it's done by default assignment operator.
+  ``` c++
+  struct Test
+  {
+  char *ptr;
+  };
+  
+  void shallow_copy(Test &src, Test &dest)
+  {
+    dest.ptr = src.ptr;
+  }
+  void deep_copy(Test &src, Test &dest)
+  {
+    dest.ptr = (char *) malloc(strlen(src.ptr) + !);
+    strcpy(dest.ptr, src.ptr);
+  }
+  ```
+ ### 6-)Use member initialization instead of assignment in constructors.
+ 
+ A shallow copy, copies all of the member variables from one object to another except pointer objects and it's done by default assignment operator.
+  ``` c++
+  
+  class A 
+  {
+  private:
+      string s1_, s2_;
+  public:
+      A() { s1_ = “Hello, “; s2_ = “world”; } 
+  };
+  ```
+  
+  The code generated for the constructor is like this:   ```A():s1_(), s2_(){s1_ = "Hello"; s2_ = "world";} ``` 
+  
+  So for writing more clean and faster code initialize member variables like this: ```A():s1_("Hello"), s2_("World"){} ```
+ 
+
+ ### 7-)Use inheritance whenever it's truely needed.
+In C++, inheritance is the second-tightest coupling relationship after friendship. Tight connection is unfavorable and should be avoided at all costs. As a result, unless you know that inheritance is actually beneficial to your design, choose composition over inheritance.
+
+ ### 8-)Avoid magic numbers.
+ Magic numbers are not self-explanatory and it's hard to maintain them. So instead of using ```3.14``` in the code define a constant as ```const size_t PI = 3.14``` 
+ 
+ Another example might be changeable ```page_size``` variable. ```const size_t page_size = 4096```. In this example if you'd used magic number instead of variable name, it would create headaches while changing it in the code. But if you use variable name you only change the value of your constant variable.
+ 
+  ### 8-)Don't forget to initalize variables.
+  Uninitialized variables are the most common bugs in C/C++ programs. Java does this initialisation implicitly, in C++ you should initialise the variables explicitly. Some programs might run because the uninitialised variable may have the desired value. After re-compilation, that variable may have another value that you don't want. In order to overcome this situation, always initialise the variables.
+  ``` C++
+int speedupFactor;
+if(condition) speedupFactor = 2;
+else
+  speedupFactor = -1;
+// Better: Initializes variable
+int speedupFactor = -1;
+if(condition) speedupFactor = 2
+```
